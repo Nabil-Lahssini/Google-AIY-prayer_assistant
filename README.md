@@ -1,5 +1,6 @@
 # Google-AIY-prayer_assistant
-AIY optimized voice assistant Python library that tells when the next Islamic prayer will occur.
+AIY optimized voice assistant Python library that tells when the next Islamic prayer will occur.\
+This application is based on the open-source [prayer-tool](https://github.com/Nabil-Lahssini/prayer_assistant) library.
 
 ## How to get it ?
 The aiy prayer assistant is a python package available via pip.
