@@ -2,7 +2,7 @@ import os
 from pygame import mixer 
 import tempfile
 import pkg_resources
-from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
+from aiy.leds import Leds
 temp_dir = tempfile.TemporaryDirectory()
 
 def get_temp_dir() -> str:

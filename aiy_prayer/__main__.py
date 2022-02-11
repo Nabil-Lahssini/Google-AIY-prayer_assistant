@@ -1,12 +1,9 @@
 """prayer_tool"""
 import sys
 import getopt
-from datetime import datetime
 from .voice_assist import Assistant
 
 ##Declaring needed variables
-SCHOOL = 3
-CURRENT_TIME = datetime.now().time()
 LOCATION = "Brussels"
 DEST = "fr"
 VOLUME = 20

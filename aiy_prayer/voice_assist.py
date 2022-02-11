@@ -33,13 +33,13 @@ def compare_time(time1, time2):
     minutes2 = int(time2.hour*60) + int(time2.minute)
     return minutes2 - minutes1
 
-def speak(instance: PrayerTimes, language: str = "fr", current_time: time = datetime.now().time()) -> None:
+def speak(instance: PrayerTimes, language: str = "fr") -> None:
     """Will generate a string and play it in the STT class"""
     today_salat = instance.get_date()
     next_salat = today_salat.next_prayer()
     text = ""
     if next_salat is not None:
-        difference = compare_time(current_time, next_salat.time)
+        difference = compare_time(datetime.now().time(), next_salat.time)
         result = ""
         minutes = difference
         rest_minutes = int(minutes % 60)
@@ -68,8 +68,7 @@ class Assistant:
     def do(self):
         set_volume(self.volume)
         try:
-            instance = PrayerTimes(city = self.city)
-            speak(instance=instance, language=self.language)
+            speak(instance=PrayerTimes(city = self.city), language=self.language)
         except JSONDecodeError:
             play_error("The city you have given is incorrect.")
         except ValueError:
